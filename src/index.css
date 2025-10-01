@@ -1,0 +1,470 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 25 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 25 85% 65%;
+    --primary-glow: 25 85% 75%;
+
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 45 85% 60%;
+    --accent-foreground: 0 0% 10%;
+    
+    --accent-hover: 45 85% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 25 85% 55%;
+
+    --radius: 0.75rem;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(25 85% 55%), hsl(45 85% 60%), hsl(30 80% 65%));
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(25 85% 55% / 0.02), hsl(0 0% 98%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 85% 55% / 0.12), hsl(45 85% 60% / 0.08), hsl(30 80% 65% / 0.06));
+    --gradient-accent: linear-gradient(135deg, hsl(45 85% 60%), hsl(25 85% 55%), hsl(35 80% 62%));
+    --shadow-lg: 0 10px 25px -5px hsl(25 85% 55% / 0.12);
+    --shadow-glow: 0 0 20px hsl(45 85% 60% / 0.25);
+    --shadow-soft: 0 4px 20px -2px hsl(25 85% 55% / 0.1);
+    --shadow-deep: 0 8px 30px -4px hsl(25 85% 55% / 0.18);
+    --shadow-inner: inset 0 1px 3px hsl(25 85% 55% / 0.12);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 25 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 25 85% 75%;
+    --primary-glow: 25 85% 85%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 85% 70%;
+    --accent-foreground: 0 0% 10%;
+    
+    --accent-hover: 45 85% 75%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 25 85% 65%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%), hsl(25 85% 25%), hsl(30 80% 20%));
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 8%), hsl(25 85% 25% / 0.03), hsl(0 0% 10%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 85% 55% / 0.15), hsl(45 85% 60% / 0.12), hsl(30 80% 65% / 0.08));
+    --gradient-accent: linear-gradient(135deg, hsl(45 85% 70%), hsl(25 85% 65%), hsl(35 80% 68%));
+    --shadow-lg: 0 10px 25px -5px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 20px hsl(45 85% 70% / 0.3);
+    --shadow-soft: 0 4px 20px -2px hsl(25 85% 65% / 0.18);
+    --shadow-deep: 0 8px 30px -4px hsl(25 85% 65% / 0.28);
+    --shadow-inner: inset 0 1px 3px hsl(25 85% 65% / 0.18);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'system-ui', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  /* Humanized button styles */
+  .btn-human {
+    @apply rounded-2xl px-8 py-4 font-medium transition-all duration-300;
+    @apply hover:shadow-lg hover:-translate-y-0.5;
+    @apply active:scale-95;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    transform: rotate(0deg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-human:hover {
+    transform: rotate(0.3deg) scale(1.02);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-human::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-human:hover::before {
+    left: 100%;
+  }
+
+  /* Organic card styles */
+  .card-human {
+    @apply rounded-3xl border border-border/30;
+    box-shadow: var(--shadow-soft);
+    @apply hover:shadow-lg transition-all duration-500;
+    @apply hover:-translate-y-2 hover:scale-[1.02];
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    transform: rotate(0deg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-human:hover {
+    transform: rotate(0.2deg) scale(1.02) translateY(-8px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-human::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.03) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .card-human:hover::before {
+    opacity: 1;
+  }
+
+  /* Warm, organic backgrounds */
+  .bg-warm {
+    background: var(--gradient-warm);
+    position: relative;
+  }
+
+  .bg-warm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Organic animations */
+  @keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    25% { transform: translateY(-3px) rotate(0.5deg) scale(1.01); }
+    50% { transform: translateY(-5px) rotate(0deg) scale(1.02); }
+    75% { transform: translateY(-3px) rotate(-0.5deg) scale(1.01); }
+  }
+
+  @keyframes organic-float {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    20% { transform: translateY(-6px) translateX(2px) rotate(0.3deg); }
+    40% { transform: translateY(-8px) translateX(-1px) rotate(-0.2deg); }
+    60% { transform: translateY(-4px) translateX(3px) rotate(0.4deg); }
+    80% { transform: translateY(-2px) translateX(-2px) rotate(-0.1deg); }
+  }
+
+  @keyframes warm-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.3);
+      transform: scale(1) rotate(0deg);
+    }
+    50% { 
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+      transform: scale(1.02) rotate(0.5deg);
+    }
+  }
+
+  @keyframes hand-drawn-wiggle {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    10% { transform: translateX(1px) rotate(0.2deg); }
+    20% { transform: translateX(-1px) rotate(-0.1deg); }
+    30% { transform: translateX(0.5px) rotate(0.1deg); }
+    40% { transform: translateX(-0.5px) rotate(-0.2deg); }
+    50% { transform: translateX(0.8px) rotate(0.1deg); }
+    60% { transform: translateX(-0.8px) rotate(-0.1deg); }
+    70% { transform: translateX(0.3px) rotate(0.2deg); }
+    80% { transform: translateX(-0.3px) rotate(-0.1deg); }
+    90% { transform: translateX(0.1px) rotate(0.1deg); }
+  }
+
+  @keyframes breathing {
+    0%, 100% { transform: scale(1) translateY(0px); }
+    50% { transform: scale(1.01) translateY(-1px); }
+  }
+
+  @keyframes natural-sway {
+    0%, 100% { transform: rotate(0deg) translateY(0px); }
+    25% { transform: rotate(0.3deg) translateY(-2px); }
+    50% { transform: rotate(0deg) translateY(-4px); }
+    75% { transform: rotate(-0.2deg) translateY(-2px); }
+  }
+
+  @keyframes organic-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+      filter: brightness(1);
+    }
+    50% { 
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.2);
+      filter: brightness(1.05);
+    }
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 4s ease-in-out infinite;
+  }
+
+  .animate-organic-float {
+    animation: organic-float 6s ease-in-out infinite;
+  }
+
+  .animate-warm-pulse {
+    animation: warm-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-hand-drawn-wiggle {
+    animation: hand-drawn-wiggle 8s ease-in-out infinite;
+  }
+
+  .animate-breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+
+  .animate-natural-sway {
+    animation: natural-sway 5s ease-in-out infinite;
+  }
+
+  .animate-organic-glow {
+    animation: organic-glow 3s ease-in-out infinite;
+  }
+
+  /* Soft focus styles */
+  .focus-soft:focus {
+    @apply outline-none ring-2 ring-primary/20 ring-offset-2;
+  }
+
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Humanized text effects */
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Organic shapes and elements */
+  .organic-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .organic-shape-alt {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  /* Hand-drawn effect */
+  .hand-drawn {
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+
+  .hand-drawn:hover {
+    transform: rotate(0.5deg) scale(1.01);
+  }
+
+  .hand-drawn::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px solid hsl(var(--primary) / 0.2);
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transform: rotate(0deg);
+  }
+
+  .hand-drawn:hover::after {
+    opacity: 1;
+    transform: rotate(0.3deg);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+
+  /* Imperfect shapes */
+  .imperfect-circle {
+    border-radius: 50% 45% 55% 50% / 45% 50% 55% 50%;
+  }
+
+  .imperfect-rect {
+    border-radius: 20px 25px 15px 30px / 25px 20px 30px 15px;
+  }
+
+  /* Hand-written text effect */
+  .hand-written {
+    font-family: 'Kalam', 'Comic Sans MS', cursive;
+    transform: rotate(-0.5deg);
+    letter-spacing: 0.5px;
+  }
+
+  /* Organic shadows */
+  .shadow-organic {
+    box-shadow: 
+      0 4px 20px -2px hsl(var(--primary) / 0.15),
+      0 2px 8px -1px hsl(var(--accent) / 0.1),
+      inset 0 1px 0 hsl(var(--primary) / 0.1);
+  }
+
+  .shadow-organic-lg {
+    box-shadow: 
+      0 8px 30px -4px hsl(var(--primary) / 0.2),
+      0 4px 15px -2px hsl(var(--accent) / 0.15),
+      inset 0 2px 0 hsl(var(--primary) / 0.1);
+  }
+
+  /* Warm glow effect */
+  .warm-glow {
+    position: relative;
+  }
+
+  .warm-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: inherit;
+    z-index: -1;
+    animation: organic-glow 4s ease-in-out infinite;
+  }
+
+  /* Random imperfections */
+  .imperfect-text {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+
+  .imperfect-text:hover {
+    transform: rotate(0.2deg);
+  }
+
+  /* Natural cursor effects */
+  .cursor-organic {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="%23ff6b35" stroke-width="2" opacity="0.7"/></svg>'), auto;
+  }
+
+  /* Organic transitions */
+  .transition-organic {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hand-drawn borders */
+  .border-hand-drawn {
+    border: 2px solid hsl(var(--primary) / 0.2);
+    border-radius: 15px 20px 10px 25px / 20px 15px 25px 10px;
+  }
+
+  /* Organic text shadows */
+  .text-shadow-organic {
+    text-shadow: 
+      1px 1px 0 hsl(var(--primary) / 0.1),
+      2px 2px 4px hsl(var(--primary) / 0.05);
+  }
+}
