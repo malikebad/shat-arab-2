@@ -134,7 +134,11 @@ const Home = () => {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.8",
-              "reviewCount": "500"
+              "reviewCount": "500",
+              "itemReviewed": {
+                "@type": "DeliveryService",
+                "name": "Shat Al Arab Express Delivery"
+              }
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",

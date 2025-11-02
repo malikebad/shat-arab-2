@@ -26,7 +26,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
