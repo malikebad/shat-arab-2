@@ -20,13 +20,31 @@ const Footer = () => {
               Your trusted delivery partner in the Middle East. Fast, reliable, and secure logistics solutions.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://facebook.com/shatalarab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="Follow us on Facebook"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://instagram.com/shatalarab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="Follow us on Instagram"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="https://linkedin.com/company/shat-al-arab-express-delivery"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="Connect with us on LinkedIn"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -49,11 +67,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>Same-Day Delivery</li>
-              <li>International Shipping</li>
-              <li>E-Commerce Fulfillment</li>
-              <li>Corporate Logistics</li>
-              <li>Cash on Delivery</li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Same-Day Delivery</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">International Shipping</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">E-Commerce Fulfillment</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Corporate Logistics</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Cash on Delivery</Link></li>
             </ul>
           </div>
 
