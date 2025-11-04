@@ -21,29 +21,23 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://facebook.com/shatalarab"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="hover:opacity-80 transition-opacity"
-                aria-label="Follow us on Facebook"
+                aria-label="Facebook (Coming Soon)"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com/shatalarab"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="hover:opacity-80 transition-opacity"
-                aria-label="Follow us on Instagram"
+                aria-label="Instagram (Coming Soon)"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/company/shat-al-arab-express-delivery"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="hover:opacity-80 transition-opacity"
-                aria-label="Connect with us on LinkedIn"
+                aria-label="LinkedIn (Coming Soon)"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
