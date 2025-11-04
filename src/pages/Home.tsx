@@ -122,7 +122,7 @@ const Home = () => {
   ];
 
   return (
-    <>
+    <main>
       <Helmet>
         <title>Shat Al Arab Express Delivery | Fast & Reliable Delivery Services in UAE</title>
         <meta name="description" content="Leading delivery service in UAE offering same-day delivery, international shipping, and e-commerce fulfillment. 95% on-time rate, 24/7 support. Get your free quote today!" />
@@ -131,10 +131,13 @@ const Home = () => {
         <meta property="og:description" content="Leading delivery service in UAE offering same-day delivery, international shipping, and e-commerce fulfillment. 95% on-time rate, 24/7 support." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://your-domain.vercel.app/" />
+        <meta property="og:image" content="https://your-domain.vercel.app/logo.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shat Al Arab Express Delivery | Fast & Reliable Delivery Services in UAE" />
         <meta name="twitter:description" content="Leading delivery service in UAE offering same-day delivery, international shipping, and e-commerce fulfillment. 95% on-time rate, 24/7 support." />
+        <meta name="twitter:image" content="https://your-domain.vercel.app/logo.svg" />
         <link rel="canonical" href="https://your-domain.vercel.app/" />
+        <html lang="en" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -194,6 +197,9 @@ const Home = () => {
         </script>
       </Helmet>
       <div className="min-h-screen">
+        <header>
+          <h1 className="sr-only">Shat Al Arab Express Delivery - Fast & Reliable Delivery Services in UAE</h1>
+        </header>
       {/* Hero Section - New Layout */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-background via-warm to-background cursor-organic">
         <div className="container mx-auto px-4">
@@ -221,6 +227,7 @@ const Home = () => {
                     className="btn-human w-full sm:w-auto text-base px-8 py-6"
                     disabled={isInteracting}
                     onClick={handleInteractionStart}
+                    aria-label="Book your delivery now - get started with our delivery services"
                   >
                     Book Your Delivery Now
                   </Button>
@@ -232,6 +239,7 @@ const Home = () => {
                     className="btn-human w-full sm:w-auto text-base px-8 py-6"
                     disabled={isInteracting}
                     onClick={handleInteractionStart}
+                    aria-label="Track your package - enter tracking number to see delivery status"
                   >
                     Track Package
                   </Button>
@@ -507,6 +515,7 @@ const Home = () => {
                     className="btn-human w-full sm:w-auto text-base px-8 py-6"
                     disabled={isInteracting}
                     onClick={handleInteractionStart}
+                    aria-label="Start shipping today - get a free consultation for your delivery needs"
                   >
                     Start Shipping Today
                   </Button>
@@ -518,6 +527,7 @@ const Home = () => {
                     className="btn-human w-full sm:w-auto text-base px-8 py-6"
                     disabled={isInteracting}
                     onClick={handleInteractionStart}
+                    aria-label="Talk to an expert - contact our delivery specialists for personalized service"
                   >
                     Talk to an Expert
                   </Button>
@@ -590,7 +600,7 @@ const Home = () => {
         </div>
       </section>
       </div>
-    </>
+    </main>
   );
 };
 
