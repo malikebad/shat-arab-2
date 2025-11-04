@@ -161,7 +161,10 @@ const Careers = () => {
                     </ul>
                   </div>
 
-                  <Button className="btn-human w-full">
+                  <Button
+                    className="btn-human w-full"
+                    onClick={() => window.location.href = 'mailto:shiekhsubhanraza555@gmail.com?subject=Application for ' + position.title}
+                  >
                     <Mail className="mr-2 h-4 w-4" />
                     Apply Now
                   </Button>
@@ -247,7 +250,11 @@ const Careers = () => {
                 <p className="text-muted-foreground mb-6">
                   Send your CV to shiekhsubhanraza555@gmail.com with the position title in the subject line.
                 </p>
-                <Button size="lg" className="btn-human">
+                <Button
+                  size="lg"
+                  className="btn-human"
+                  onClick={() => window.location.href = 'mailto:shiekhsubhanraza555@gmail.com?subject=CV Application'}
+                >
                   <Mail className="mr-2 h-4 w-4" />
                   Send Your CV
                 </Button>
