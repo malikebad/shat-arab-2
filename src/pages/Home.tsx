@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Helmet } from "react-helmet-async";
-import { 
-  Truck, 
-  Package, 
-  Globe, 
-  Building2, 
-  Clock, 
-  Shield, 
-  Sparkles, 
+import { useState, useEffect, useCallback } from "react";
+import {
+  Truck,
+  Package,
+  Globe,
+  Building2,
+  Clock,
+  Shield,
+  Sparkles,
   Users,
   CheckCircle2,
   Zap,
@@ -22,6 +23,33 @@ import {
 } from "lucide-react";
 
 const Home = () => {
+  // Optimize INP by debouncing interactions
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  const handleInteractionStart = useCallback(() => {
+    setIsInteracting(true);
+  }, []);
+
+  const handleInteractionEnd = useCallback(() => {
+    setIsInteracting(false);
+  }, []);
+
+  useEffect(() => {
+    const handlePointerDown = () => handleInteractionStart();
+    const handlePointerUp = () => {
+      // Small delay to prevent premature end
+      setTimeout(handleInteractionEnd, 50);
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('pointerup', handlePointerUp);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('pointerup', handlePointerUp);
+    };
+  }, [handleInteractionStart, handleInteractionEnd]);
+
   const services = [
     {
       icon: Clock,
@@ -187,12 +215,24 @@ const Home = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <Button size="lg" variant="accent" className="btn-human w-full sm:w-auto text-base px-8 py-6">
+                  <Button
+                    size="lg"
+                    variant="accent"
+                    className="btn-human w-full sm:w-auto text-base px-8 py-6"
+                    disabled={isInteracting}
+                    onClick={handleInteractionStart}
+                  >
                     Book Your Delivery Now
                   </Button>
                 </Link>
                 <Link to="/track">
-                  <Button size="lg" variant="outline" className="btn-human w-full sm:w-auto text-base px-8 py-6">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="btn-human w-full sm:w-auto text-base px-8 py-6"
+                    disabled={isInteracting}
+                    onClick={handleInteractionStart}
+                  >
                     Track Package
                   </Button>
                 </Link>
@@ -277,7 +317,12 @@ const Home = () => {
                 <h3 className="text-xl font-bold mb-3 imperfect-text">{service.title}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed imperfect-text text-shadow-organic">{service.description}</p>
                 <Link to="/services">
-                  <Button variant="link" className="p-0 font-semibold text-primary hover:text-accent transition-colors">
+                  <Button
+                    variant="link"
+                    className="p-0 font-semibold text-primary hover:text-accent transition-colors"
+                    disabled={isInteracting}
+                    onClick={handleInteractionStart}
+                  >
                     Learn More →
                   </Button>
                 </Link>
@@ -456,12 +501,24 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <Button size="lg" variant="accent" className="btn-human w-full sm:w-auto text-base px-8 py-6">
+                  <Button
+                    size="lg"
+                    variant="accent"
+                    className="btn-human w-full sm:w-auto text-base px-8 py-6"
+                    disabled={isInteracting}
+                    onClick={handleInteractionStart}
+                  >
                     Start Shipping Today
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="btn-human w-full sm:w-auto text-base px-8 py-6">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="btn-human w-full sm:w-auto text-base px-8 py-6"
+                    disabled={isInteracting}
+                    onClick={handleInteractionStart}
+                  >
                     Talk to an Expert
                   </Button>
                 </Link>
