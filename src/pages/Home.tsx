@@ -115,7 +115,7 @@ const Home = () => {
             "description": "Leading delivery service in UAE offering same-day delivery, international shipping, and e-commerce fulfillment",
             "url": "https://your-domain.vercel.app/",
             "telephone": "+971555478989",
-            "email": "info@shatalarab.ae",
+            "email": "shiekhsubhanraza555@gmail.com",
             "areaServed": {
               "@type": "Country",
               "name": "United Arab Emirates"
@@ -510,7 +510,12 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Email Us</div>
-                    <div className="text-sm text-muted-foreground">info@shatalarab.ae</div>
+                    <a
+                      href="mailto:shiekhsubhanraza555@gmail.com"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      shiekhsubhanraza555@gmail.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

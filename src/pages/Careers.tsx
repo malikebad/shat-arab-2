@@ -216,7 +216,7 @@ const Careers = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Send Your CV</h3>
                 <p className="text-muted-foreground">
-                  Email your resume and cover letter to careers@shatalarab.ae
+                  Email your resume and cover letter to shiekhsubhanraza555@gmail.com
                 </p>
               </div>
 
@@ -245,7 +245,7 @@ const Careers = () => {
               <Card className="card-human p-8 max-w-2xl mx-auto">
                 <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
                 <p className="text-muted-foreground mb-6">
-                  Send your CV to careers@shatalarab.ae with the position title in the subject line.
+                  Send your CV to shiekhsubhanraza555@gmail.com with the position title in the subject line.
                 </p>
                 <Button size="lg" className="btn-human">
                   <Mail className="mr-2 h-4 w-4" />

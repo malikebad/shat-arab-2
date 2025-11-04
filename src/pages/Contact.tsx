@@ -222,9 +222,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email Address</h3>
-                    <p className="text-muted-foreground">
-                      info@shatalarab.ae
-                    </p>
+                    <a
+                      href="mailto:shiekhsubhanraza555@gmail.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      shiekhsubhanraza555@gmail.com
+                    </a>
                     <p className="text-sm text-muted-foreground mt-1">
                       We respond to all emails within 24 hours
                     </p>
