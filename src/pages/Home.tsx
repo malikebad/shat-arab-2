@@ -37,12 +37,15 @@ const Home = () => {
   useEffect(() => {
     const handlePointerDown = () => handleInteractionStart();
     const handlePointerUp = () => {
-      // Small delay to prevent premature end
-      setTimeout(handleInteractionEnd, 50);
+      // Use requestAnimationFrame for better performance instead of setTimeout
+      requestAnimationFrame(() => {
+        // Small delay to prevent premature end but more performant
+        setTimeout(handleInteractionEnd, 16); // One frame at 60fps
+      });
     };
 
-    document.addEventListener('pointerdown', handlePointerDown);
-    document.addEventListener('pointerup', handlePointerUp);
+    document.addEventListener('pointerdown', handlePointerDown, { passive: true });
+    document.addEventListener('pointerup', handlePointerUp, { passive: true });
 
     return () => {
       document.removeEventListener('pointerdown', handlePointerDown);
